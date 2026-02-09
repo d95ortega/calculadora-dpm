@@ -1,15 +1,15 @@
-function calcular() {
-  const costo = document.getElementById("costo").value;
-  const resultado = document.getElementById("resultado");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
 
-  if (!costo) {
-    resultado.textContent = "Ingresa un valor válido";
-    resultado.className = "text-red-600 mt-4 text-center";
-    return;
-  }
-
-  const total = Number(costo) * 1.3;
-
-  resultado.textContent = `Precio sugerido: $ ${total.toLocaleString()}`;
-  resultado.className = "text-green-600 mt-4 text-center";
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
 }
+
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
